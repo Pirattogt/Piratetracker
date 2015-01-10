@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group name="Aalborg Zoo"/>
+        <group>
+            <file>file:/home/jesper/NetbeansProjects/piratetracker2/laravel/app/database/migrations/2014_12_23_122940_create_position_table.php</file>
+            <file>file:/home/jesper/NetbeansProjects/piratetracker2/laravel/app/controllers/PositionsController.php</file>
+            <file>file:/home/jesper/NetbeansProjects/piratetracker2/laravel/app/routes.php</file>
+            <file>file:/home/jesper/NetbeansProjects/piratetracker2/laravel/app/config/local/database.php</file>
+        </group>
+    </open-files>
+</project-private>
