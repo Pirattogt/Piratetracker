@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
     	
 $env = $app->detectEnvironment(array(
 	'local' => array('Raven'),
-	'production' => array('razzy'),
+	'production' => array('razzy', 'pirat.dvda.dk'),
 		));
 
 /*
