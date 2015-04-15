@@ -10,9 +10,10 @@ class PositionsController extends BaseController {
 		$lat = Input::get('lat');
 		$lon = Input::get('lon');
 		$timestamp = Input::get('timestamp');
+		$userId = (Auth::id() ? : 0); // If we have no user logged in use 0. This shoul only happen during testing
 
 		$id = DB::table('positions')->insertGetId(
-				array('latitude' => $lat, 'longitude' => $lon, 'timestamp' => $timestamp, 'user' => Auth::id())
+				array('latitude' => $lat, 'longitude' => $lon, 'timestamp' => $timestamp, 'user' => $userId, 'created_at' => null)
 		);
 
 		return Response::json(array('success' => true, 'position' => 'received', 'id' => $id));

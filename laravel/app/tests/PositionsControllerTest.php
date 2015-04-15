@@ -1,8 +1,8 @@
 <?php
 
-class PositionsTest extends TestCase {
+class PositionsControllerTest extends TestCase {
 
-	public function testAddPosition() {
+	public function testReceivePosition() {
 		$lat_min = -90;
 		$lat_max = 90;
 		$lon_min = -180;
@@ -20,8 +20,9 @@ class PositionsTest extends TestCase {
 		$this->be($user);
 
 		$crawler = $this->call('POST', 'position', $parameters);
-		var_dump($crawler->getContent());
+		$this->assertTrue($this->client->getResponse()->isOk());
 
+		$crawler = $this->call('PUT', 'position', $parameters);
 		$this->assertTrue($this->client->getResponse()->isOk());
 	}
 

@@ -12,26 +12,14 @@
  */
 
 Route::get('/', function() {
-//	if (DB::connection()->getDatabaseName()) {
-//		echo "Yes! successfully connected to the DB: " . DB::connection()->getDatabaseName();
-//	}
-//
-//	if (!Schema::hasTable('users')) {
-//		Schema::create('users', function($table) {
-//			$table->increments('id');
-//		});
-//	}
-//	return View::make('hello');
 });
 
-//Route::get('position/{id}', array('before' => 'auth.basic', 'uses' => 'PositionsController@receivePosition'));
-//Route::get('position/{id}', array('before' => 'basic.once', 'uses' => 'PositionsController@receivePosition'));
-
-//Route::post('position', array(/*'before' => 'auth.basic',*/ 'uses' => 'PositionsController@receivePosition'));
-Route::post('position', array('before' => 'auth.basic', 'uses' => 'PositionsController@receivePosition'));
+Route::match(['post', 'put'], 'position', array('before' => 'auth.basic', 'uses' => 'PositionsController@receivePosition'));
 
 Route::get('position/get', array('before' => 'auth.basic', 'uses' => 'PositionsController@getLastPosition'));
 Route::get('position/get/all', array('before' => 'auth.basic', 'uses' => 'PositionsController@getAllPositions'));
+
+Route::get('users/get', array('before' => 'auth.basic', 'uses' => 'UsersController@getUserInfo'));
 
 Route::get('logout', array('uses' => 'HomeController@doLogout'));
 
